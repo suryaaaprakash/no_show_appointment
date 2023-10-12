@@ -46,3 +46,36 @@ Here is a sample of the first few rows from the dataset to provide you with a gl
 | 8680       | F            | F      | 29-04-2016     | 29-04-2016       | 18.08.00        | 22        | 8   | 0.0          | 0.0      | ... | Pune            | 2000.0    | Friday       | Friday         | Follow-up Visit  | Web Portal | 0.0       | 0.589744             | 0 days         | 18.0            |
 | 88400      | F            | F      | 29-04-2016     | 29-04-2016       | 20.22.00        | 26        | 56  | 1.0          | 1.0      | ... | Pune            | 3000.0    | Friday       | Friday         | New Patient      | Mobile Application | 1.0 | 0.535714             | 0 days         | 20.0            |
 
+## Features and Categories
+
+The dataset comprises several features, each with a distinct set of categories. Here's an overview of the features and the number of categories within each:
+
+1. **Gender**
+   - Number of Categories: 2
+   - Categories: 'Male' and 'Female'
+
+2. **No-show**
+   - Number of Categories: 2
+   - Categories: 'No' and 'Yes'
+
+3. **Employment**
+   - Number of Categories: 3
+   - Categories: 'Non Employed', 'Salaried', and 'Business'
+
+4. **Location and Clinic Location**
+   - Number of Categories: 5
+   - Categories: 'Bengaluru', 'Chennai', 'Pune', 'Noida', and 'Coimbatore'
+
+5. **Scheduled Day and Appointment Day**
+   - Number of Categories: 7
+   - Categories: 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', and 'Saturday'
+
+6. **Appointment Type**
+   - Number of Categories: 2
+   - Categories: 'New Patient' and 'Follow-up Patient'
+
+7. **Channel**
+   - Number of Categories: 2
+   - Categories: 'Call' and 'Web Portal'
+
+This information provides a clear understanding of the features and the variety of categories present within each, which is valuable for data analysis and modeling.
