@@ -46,36 +46,90 @@ Here is a sample of the first few rows from the dataset to provide you with a gl
 | 8680       | F            | F      | 29-04-2016     | 29-04-2016       | 18.08.00        | 22        | 8   | 0.0          | 0.0      | ... | Pune            | 2000.0    | Friday       | Friday         | Follow-up Visit  | Web Portal | 0.0       | 0.589744             | 0 days         | 18.0            |
 | 88400      | F            | F      | 29-04-2016     | 29-04-2016       | 20.22.00        | 26        | 56  | 1.0          | 1.0      | ... | Pune            | 3000.0    | Friday       | Friday         | New Patient      | Mobile Application | 1.0 | 0.535714             | 0 days         | 20.0            |
 
-## Features and Categories
 
-The dataset comprises several features, each with a distinct set of categories. Here's an overview of the features and the number of categories within each:
+### Data Pre-processing
 
-1. **Gender**
-   - Number of Categories: 2
-   - Categories: 'Male' and 'Female'
+--> Some columns had null values :   To address the issue, those null values were removed.
 
-2. **No-show**
-   - Number of Categories: 2
-   - Categories: 'No' and 'Yes'
+--> To satisfy some specific datatype requirements, few columns datatype was changed.
 
-3. **Employment**
-   - Number of Categories: 3
-   - Categories: 'Non Employed', 'Salaried', and 'Business'
+--> To avoid confusion, some column names were standardized.
 
-4. **Location and Clinic Location**
-   - Number of Categories: 5
-   - Categories: 'Bengaluru', 'Chennai', 'Pune', 'Noida', and 'Coimbatore'
+--> Various columns had categorical data . To convert categorical data into  numerical format  ‘Label Encoding’ was done.
 
-5. **Scheduled Day and Appointment Day**
-   - Number of Categories: 7
-   - Categories: 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', and 'Saturday'
 
-6. **Appointment Type**
-   - Number of Categories: 2
-   - Categories: 'New Patient' and 'Follow-up Patient'
+### Exploratory Data Analysis
 
-7. **Channel**
-   - Number of Categories: 2
-   - Categories: 'Call' and 'Web Portal'
+Here are some EDA analysis plots:
 
-This information provides a clear understanding of the features and the variety of categories present within each, which is valuable for data analysis and modeling.
+![image](https://github.com/suryaaaprakash/no_show_appointment/assets/147717009/3a16b142-3461-4ab2-90e2-d1496e328e5d)
+
+![image](https://github.com/suryaaaprakash/no_show_appointment/assets/147717009/cd586f8b-5b8b-4a99-b16a-fb449c10c116)
+
+![image](https://github.com/suryaaaprakash/no_show_appointment/assets/147717009/dc5eabb5-d0d9-4a5b-a8c6-b33d36004379)
+
+![image](https://github.com/suryaaaprakash/no_show_appointment/assets/147717009/6fe51670-9f60-480d-96ec-d20383cfa66c)
+
+
+### Feature Selection
+
+For selecting the appropriate features for training the model , we check multicollinearity VIF and plot the correlation matrix.
+
+### Models used
+
+Logistic Regression
+
+Naïve Bayes
+
+Random Forest
+
+Support Vector Machine
+
+Ada boost Classifier
+
+Gradient Boosting
+
+XG Boost Classifier
+
+
+### Model Building
+
+When the models were trained on the dataset,
+
+* The predictions were 0 biased due to class imbalance.
+
+       So to address the class imbalance, SMOTE was used.
+    SMOTE:  (Synthetic Minority OverSampling Technique)
+  
+    SMOTE is a resampling technique specifically designed to mitigate class imbalance by oversampling the minority class.
+
+* After balancing the classes using SMOTE, the predictions were still 0 biased.
+
+       So, the true positive  and true negative predictions were taken separately and trained on the models.
+  This method also did not provide good results and yielded wrong predictions.
+
+CLASS IMBALANCE- 0 AND 1 EQUAL:
+
+- Checked the occurrences of each class.
+  
+- Found the minimum count between the two classes.
+  
+- Created a new DataFrame with the sampled data – ‘balanced_df’.
+
+  'Balanced_df' contains an equal number of samples for both classes
+
+![image](https://github.com/suryaaaprakash/no_show_appointment/assets/147717009/4c993fa4-1157-44b1-9a62-a3826e95af9f)
+
+This dataset was used for model training and gave good results.
+
+
+
+
+
+
+
+
+
+
+
+
